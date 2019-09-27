@@ -52,23 +52,28 @@ let tuesday = [
         duration : 40
     }
 ];
-
+//to add the second array to the first
 let tasks = monday.concat(tuesday);
+
+// converted minutes to hours
 let durations=[];
 for (let i=0;i<tasks.length;i++){
     durations.push((tasks[i].duration)/60);
 };
 console.log(durations);
 
+//logged only the durations which are less than two hours
 let lessThanTwo = durations.filter(x => x < 2)
 console.log(lessThanTwo);
 
-
+// multiplied the hours with 20 which is her salary 
 let salary = lessThanTwo.map(y => y*20);
 console.log(salary);
 
+// summed her salary
 var total=0;
 for(var i in salary){
     total += salary[i]; }
 
+//printed the total with euro format.
 console.log ( "The total is " + "\u20AC"+ total);
